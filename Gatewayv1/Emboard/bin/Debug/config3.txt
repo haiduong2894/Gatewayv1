@@ -1,0 +1,5 @@
+E:\Sample\XmlSigate\database.xml;
+E:\Sample\XmlSigate\baochay_db.xml;
+http://sigate.byethost7.com/sg/rx.php;
+http://sigate.byethost7.com/sg/mymap.php;
+http://sigate.byethost7.com/sg/getdata.php;

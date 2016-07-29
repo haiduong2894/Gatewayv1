@@ -1,0 +1,7 @@
+\Storage Card\sigate\database.xml;
+\Storage Card\sigate\baochay_db.xml;
+http://192.168.0.112:8000/sg/rx.php;
+http://192.168.0.112:8000/sg/mymap.php;
+http://192.168.0.112:8000/sg/getdata.php;
+http://192.168.0.112:8000/sg/getweather.php;
+20
