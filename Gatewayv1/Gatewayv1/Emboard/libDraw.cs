@@ -47,25 +47,25 @@ namespace Emboard
         {
             try
             {
-                path_icon_sensor_true = Directory.GetCurrentDirectory().ToString() + @"\red.png";
-                path_icon_sensor_false = Directory.GetCurrentDirectory().ToString() + @"\violet.png";
-                path_icon_actor_true = Directory.GetCurrentDirectory().ToString() + @"\green.png";
-                path_icon_actor_false = Directory.GetCurrentDirectory().ToString() + @"\violet.png";
-                path_icon_val_on = Directory.GetCurrentDirectory().ToString() + @"\yellow.png";
-                path_icon_val_off = Directory.GetCurrentDirectory().ToString() + @"\grey.png";
-                path = Directory.GetCurrentDirectory().ToString() + @"\bando.png";
+                path_icon_sensor_true = Directory.GetCurrentDirectory().ToString() + @"\Icon\red.png";
+                path_icon_sensor_false = Directory.GetCurrentDirectory().ToString() + @"\Icon\violet.png";
+                path_icon_actor_true = Directory.GetCurrentDirectory().ToString() + @"\Icon\green.png";
+                path_icon_actor_false = Directory.GetCurrentDirectory().ToString() + @"\Icon\violet.png";
+                path_icon_val_on = Directory.GetCurrentDirectory().ToString() + @"\Icon\yellow.png";
+                path_icon_val_off = Directory.GetCurrentDirectory().ToString() + @"\Icon\grey.png";
+                path = Directory.GetCurrentDirectory().ToString() + @"\Icon\bando.png";
             }
             catch
             {
                 try
                 {
-                    path_icon_sensor_true = @"\Storage Card\sigate\red.png";
-                    path_icon_sensor_false = @"\Storage Card\sigate\violet.png";
-                    path_icon_actor_true = @"\Storage Card\sigate\blue.png";
-                    path_icon_actor_false = @"\Storage Card\sigate\violet.png";
-                    path_icon_val_on = @"\Storage Card\sigate\yellow.png";
-                    path_icon_val_off = @"\Storage Card\sigate\grey.png";
-                    path = @"\Storage Card\sigate\bando.png";
+                    path_icon_sensor_true = @"\Storage Card\Sigate\Icon\red.png";
+                    path_icon_sensor_false = @"\Storage Card\Sigate\Icon\violet.png";
+                    path_icon_actor_true = @"\Storage Card\Sigate\Icon\blue.png";
+                    path_icon_actor_false = @"\Storage Card\Sigate\Icon\violet.png";
+                    path_icon_val_on = @"\Storage Card\Sigate\Icon\yellow.png";
+                    path_icon_val_off = @"\Storage Card\Sigate\Icon\grey.png";
+                    path = @"\Storage Card\Sigate\Icon\bando.png";
                 }
                 catch
                 {

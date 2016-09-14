@@ -18,7 +18,7 @@ namespace Emboard
 {
     public class Database
     {
-        string[] file = { @"\Storage Card\sigate\database.xml", @"\Storage Card\sigate\baochay_db.xml" };
+        string[] file = { @"\Storage Card\Sigate\Xml\database.xml", @"\Storage Card\Sigate\Xml\baochay_db.xml" };
         //static string[] file = connection.Confix();
         
         public XmlDocument xml = new XmlDocument();

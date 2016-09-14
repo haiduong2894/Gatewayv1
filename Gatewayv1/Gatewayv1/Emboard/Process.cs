@@ -315,7 +315,8 @@ namespace Emboard
                                     string STT_t = data.Substring(14, 2); int STT_i = int.Parse(STT_t, System.Globalization.NumberStyles.HexNumber);
                                     if (Ip_i == 3) WebServer.dataSendToWeb.Enqueue("dang nhan du lieu anh");
                                     sensor.TakePhotoDone = false;
-                                    DisplayData("Ip:" + Ip_i.ToString() + "  Mac:" + Mac_i.ToString() + "  Goi" + STT_i.ToString() + "  dodai:" + dodai_i.ToString(), txtShowData);
+                                    int totalPacket = dodai_i/80+1;
+                                    DisplayData("Ip:" + Ip_i.ToString() + "  Mac:" + Mac_i.ToString() + "  Goi" + STT_i.ToString() + "/" + totalPacket, txtShowData);
                                     Data.convertDataPicture(sensor.ArrayStringImage, data);
                                  
                                     try { DisplayImg(sensor.Img_path, picbox2); }
@@ -325,7 +326,7 @@ namespace Emboard
                                         try
                                         {
                                             DisplayData("duong", txtShowData);
-                                            string temp = "#RC:" + sensor.Ip + sensor.Mac + dodai_t + sensor.ArrayStringImage[Mac_i];
+                                            string temp = "#RC:" + sensor.Ip + sensor.Mac + dodai_t + Data.addStringImage(Mac_i,sensor.ArrayStringImage);
                                             WebServer.dataSendToWeb.Enqueue(temp);
                                             Thread.Sleep(1000);
                                             sensor.TakePhotoDone = false;
@@ -510,7 +511,6 @@ namespace Emboard
 #endif
                                 WebServer.dataSendToWeb.Enqueue(timeSendToWeb);
                             }
-
                         }
                         catch { DisplayData("", txtShowData); }
                         drawImage.reload(pic);
@@ -518,6 +518,9 @@ namespace Emboard
                     case 'P':
                         Data.convertDataJoinNetwork(data);
                         DisplayData("(" + showTime() + "): Thong tin trang thai sensor: \r\n Sensor " + sensor.Ip + " (" + sensor.Mac + ") " + " : \r\n Van hoat dong trong mang !!!\r\n", txtShowData);
+                        break;
+                    default:
+                        DisplayData("(" + showTime() + "): Data from Router: " + data, txtShowData);
                         break;
                 }
 

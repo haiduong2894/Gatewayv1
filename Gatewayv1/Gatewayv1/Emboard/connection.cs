@@ -28,7 +28,7 @@ namespace Emboard
             }
             catch
             {
-                path = @"\Storage Card\sigate\config.txt";
+                path = @"\Storage Card\Sigate\Config\config.txt";
             }
             using (FileStream filestream = new FileStream(path, FileMode.Open))
             {

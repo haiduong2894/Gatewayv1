@@ -257,14 +257,23 @@ namespace Emboard
         }
        
         /// <summary>
-        /// ghep du lieu anh
+        /// ghep du lieu anh trong 1 mang
         /// </summary>
         /// <param name="stringIn"></param>
         /// <returns></returns>
-        public void addStringImage(string Mac,string[] strImg, string stringIn)
+        public string addStringImage(int mac, string[,] strImg)
         {
-            int mac = int.Parse(Mac, System.Globalization.NumberStyles.HexNumber);
-            strImg[mac] = strImg[mac] + stringIn;
+            string strOut = null;
+            //int mac = int.Parse(Mac, System.Globalization.NumberStyles.HexNumber);
+            try
+            {
+                for( int i = 0; i<strImg.GetLength(0);i++){
+                    strOut += strImg[mac,i];
+                }
+            }
+            catch { MessageBox.Show("Cannot mux image data"); }
+            return strOut;
+            //strImg[mac] = strImg[mac] + stringIn;
         }
         /// <summary>
         /// convert from string to hex array
@@ -286,7 +295,7 @@ namespace Emboard
         /// Su ly du lieu anh gui ve tu router
         /// </summary>
         /// <param111 name="data"></param>
-        public void convertDataPicture(string[] StringImage, string data) //data: #RI:FFFF D0D1D2D3 D4D5D6D7...
+        public void convertDataPicture(string[,] StringImage, string data) //data: #RI:FFFF D0D1D2D3 D4D5D6D7...
         {
             try
             {
@@ -301,15 +310,16 @@ namespace Emboard
                 int mac = int.Parse(sensor.Mac, System.Globalization.NumberStyles.HexNumber);
                 lengthImage[mac] = int.Parse(dodai, System.Globalization.NumberStyles.HexNumber);
                 int i = int.Parse(STT, System.Globalization.NumberStyles.HexNumber);
-                if (i == 0) { StringImage[mac] = null; }
+                //if (i == 0) { StringImage[mac] = null; }
                 temp = data.Substring(16, data.Length - 17);  //Bo 16 ky tu dau va 1 ky tu \n o cuoi data
-                addStringImage(sensor.Mac, StringImage, temp);
+                sensor.ArrayStringImage[mac, i] = temp;
                 if (i >= (lengthImage[mac] / DataLen))
                 {
                     try
                     {
-                        sensor.Img_path = @"\Storage Card\sigate\Image\ImageSensor"+sensor.Mac.ToString()+DateTime.Now.ToString("hhmmss")+".jpeg";
-                        byte[] byteArr = stringToHex(StringImage[mac]);
+                        sensor.Img_path = @"\Storage Card\Sigate\Image\ImageSensor"+sensor.Mac.ToString()+DateTime.Now.ToString("hhmmss")+".jpeg";
+                        temp = addStringImage(mac, sensor.ArrayStringImage);
+                        byte[] byteArr = stringToHex(temp);
                         ByteArrayToFile(sensor.Img_path, byteArr);
                         //Stream strm = new MemoryStream(byteArr);
                         

@@ -289,7 +289,7 @@ namespace Emboard
         }
         public void port_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            MessageBox.Show("sms1");
+            DisplayData("sms1", txtShowData);
             try
             {
                 if (e.EventType == SerialData.Chars)

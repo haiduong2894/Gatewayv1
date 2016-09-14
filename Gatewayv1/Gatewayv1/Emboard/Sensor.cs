@@ -137,8 +137,8 @@ namespace Emboard
         /// <summary>
         /// mang luu cac doan du lieu anh
         /// </summary>
-        private string[] arrayStringImage = new string[100];
-        public string[] ArrayStringImage
+        private static string[,] arrayStringImage = new string[200,200];
+        public string[,] ArrayStringImage
         {
             get { return arrayStringImage; }
             set { arrayStringImage = value; }

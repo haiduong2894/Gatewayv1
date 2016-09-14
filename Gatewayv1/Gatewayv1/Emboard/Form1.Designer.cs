@@ -89,18 +89,22 @@
             this.lbGeneral = new System.Windows.Forms.LinkLabel();
             this.lbNode = new System.Windows.Forms.LinkLabel();
             this.tabConnect = new System.Windows.Forms.TabPage();
-            this.btnC = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btTS = new System.Windows.Forms.Button();
-            this.btSendToWeb = new System.Windows.Forms.Button();
-            this.cbnode = new System.Windows.Forms.ComboBox();
-            this.cbMalenh = new System.Windows.Forms.ComboBox();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.tbShow = new System.Windows.Forms.TextBox();
-            this.btexit = new System.Windows.Forms.Button();
-            this.btSend = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.cbnode = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbMalenh = new System.Windows.Forms.ComboBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnC = new System.Windows.Forms.Button();
             this.btConnect = new System.Windows.Forms.Button();
+            this.btTS = new System.Windows.Forms.Button();
+            this.btSend = new System.Windows.Forms.Button();
+            this.btexit = new System.Windows.Forms.Button();
+            this.btSendToWeb = new System.Windows.Forms.Button();
             this.tabServer = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.lb_status = new System.Windows.Forms.Label();
@@ -133,6 +137,10 @@
             this.pnNode.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabConnect.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.tabServer.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -143,7 +151,7 @@
             this.tabMap.Controls.Add(this.pictureBox1);
             this.tabMap.Location = new System.Drawing.Point(4, 25);
             this.tabMap.Name = "tabMap";
-            this.tabMap.Size = new System.Drawing.Size(465, 214);
+            this.tabMap.Size = new System.Drawing.Size(570, 208);
             this.tabMap.Text = "Map";
             // 
             // pnShow
@@ -185,7 +193,7 @@
             this.tabSetting.Controls.Add(this.panel1);
             this.tabSetting.Location = new System.Drawing.Point(4, 25);
             this.tabSetting.Name = "tabSetting";
-            this.tabSetting.Size = new System.Drawing.Size(465, 214);
+            this.tabSetting.Size = new System.Drawing.Size(570, 208);
             this.tabSetting.Text = "Setting";
             // 
             // panel2
@@ -671,65 +679,85 @@
             // tabConnect
             // 
             this.tabConnect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.tabConnect.Controls.Add(this.btnC);
-            this.tabConnect.Controls.Add(this.pictureBox2);
-            this.tabConnect.Controls.Add(this.btTS);
-            this.tabConnect.Controls.Add(this.btSendToWeb);
-            this.tabConnect.Controls.Add(this.cbnode);
-            this.tabConnect.Controls.Add(this.cbMalenh);
-            this.tabConnect.Controls.Add(this.tbShow);
-            this.tabConnect.Controls.Add(this.btexit);
-            this.tabConnect.Controls.Add(this.btSend);
-            this.tabConnect.Controls.Add(this.label2);
-            this.tabConnect.Controls.Add(this.label1);
-            this.tabConnect.Controls.Add(this.btConnect);
+            this.tabConnect.Controls.Add(this.panel7);
+            this.tabConnect.Controls.Add(this.panel6);
+            this.tabConnect.Controls.Add(this.panel5);
+            this.tabConnect.Controls.Add(this.panel4);
             this.tabConnect.Location = new System.Drawing.Point(4, 25);
             this.tabConnect.Name = "tabConnect";
-            this.tabConnect.Size = new System.Drawing.Size(465, 214);
+            this.tabConnect.Size = new System.Drawing.Size(570, 208);
             this.tabConnect.Text = "Connect";
             // 
-            // btnC
+            // panel7
             // 
-            this.btnC.Location = new System.Drawing.Point(4, 178);
-            this.btnC.Name = "btnC";
-            this.btnC.Size = new System.Drawing.Size(18, 26);
-            this.btnC.TabIndex = 34;
-            this.btnC.Text = "C";
-            this.btnC.Click += new System.EventHandler(this.btnC_Click);
+            this.panel7.Controls.Add(this.pictureBox2);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel7.Location = new System.Drawing.Point(291, 30);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(279, 144);
             // 
             // pictureBox2
             // 
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(273, 37);
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(189, 135);
+            this.pictureBox2.Size = new System.Drawing.Size(279, 144);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-            // btTS
+            // panel6
             // 
-            this.btTS.Location = new System.Drawing.Point(312, 178);
-            this.btTS.Name = "btTS";
-            this.btTS.Size = new System.Drawing.Size(67, 26);
-            this.btTS.TabIndex = 31;
-            this.btTS.Text = "File...";
-            this.btTS.Click += new System.EventHandler(this.btTS_Click);
+            this.panel6.Controls.Add(this.tbShow);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel6.Location = new System.Drawing.Point(0, 30);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(291, 144);
             // 
-            // btSendToWeb
+            // tbShow
             // 
-            this.btSendToWeb.Location = new System.Drawing.Point(227, 178);
-            this.btSendToWeb.Name = "btSendToWeb";
-            this.btSendToWeb.Size = new System.Drawing.Size(69, 26);
-            this.btSendToWeb.TabIndex = 28;
-            this.btSendToWeb.Text = "Speed";
-            this.btSendToWeb.Click += new System.EventHandler(this.btSendToWeb_Click);
+            this.tbShow.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbShow.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbShow.Location = new System.Drawing.Point(0, 0);
+            this.tbShow.Multiline = true;
+            this.tbShow.Name = "tbShow";
+            this.tbShow.ReadOnly = true;
+            this.tbShow.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbShow.Size = new System.Drawing.Size(291, 144);
+            this.tbShow.TabIndex = 9;
+            // 
+            // panel5
+            // 
+            this.panel5.AutoScroll = true;
+            this.panel5.Controls.Add(this.cbnode);
+            this.panel5.Controls.Add(this.label1);
+            this.panel5.Controls.Add(this.label2);
+            this.panel5.Controls.Add(this.cbMalenh);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(570, 30);
             // 
             // cbnode
             // 
-            this.cbnode.Location = new System.Drawing.Point(312, 8);
+            this.cbnode.Location = new System.Drawing.Point(310, 0);
             this.cbnode.Name = "cbnode";
             this.cbnode.Size = new System.Drawing.Size(150, 23);
             this.cbnode.TabIndex = 25;
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(2, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 20);
+            this.label1.Text = "Command:";
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(252, 2);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 20);
+            this.label2.Text = "Node:";
             // 
             // cbMalenh
             // 
@@ -749,63 +777,84 @@
             this.cbMalenh.Items.Add("Tat van so 5");
             this.cbMalenh.Items.Add("Tat van so 6");
             this.cbMalenh.Items.Add("Tat tat ca van");
-            this.cbMalenh.Location = new System.Drawing.Point(76, 8);
+            this.cbMalenh.Location = new System.Drawing.Point(74, 0);
             this.cbMalenh.Name = "cbMalenh";
             this.cbMalenh.Size = new System.Drawing.Size(150, 23);
             this.cbMalenh.TabIndex = 15;
             this.cbMalenh.SelectedIndexChanged += new System.EventHandler(this.cbMalenh_SelectedIndexChanged);
             // 
-            // tbShow
+            // panel4
             // 
-            this.tbShow.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbShow.Location = new System.Drawing.Point(4, 37);
-            this.tbShow.Multiline = true;
-            this.tbShow.Name = "tbShow";
-            this.tbShow.ReadOnly = true;
-            this.tbShow.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbShow.Size = new System.Drawing.Size(268, 135);
-            this.tbShow.TabIndex = 9;
+            this.panel4.AutoScroll = true;
+            this.panel4.Controls.Add(this.btnC);
+            this.panel4.Controls.Add(this.btConnect);
+            this.panel4.Controls.Add(this.btTS);
+            this.panel4.Controls.Add(this.btSend);
+            this.panel4.Controls.Add(this.btexit);
+            this.panel4.Controls.Add(this.btSendToWeb);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 174);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(570, 34);
             // 
-            // btexit
+            // btnC
             // 
-            this.btexit.Location = new System.Drawing.Point(397, 178);
-            this.btexit.Name = "btexit";
-            this.btexit.Size = new System.Drawing.Size(65, 26);
-            this.btexit.TabIndex = 22;
-            this.btexit.Text = "Exit";
-            this.btexit.Click += new System.EventHandler(this.btexit_Click);
+            this.btnC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnC.Location = new System.Drawing.Point(0, 9);
+            this.btnC.Name = "btnC";
+            this.btnC.Size = new System.Drawing.Size(26, 26);
+            this.btnC.TabIndex = 34;
+            this.btnC.Text = "X";
+            this.btnC.Click += new System.EventHandler(this.btnC_Click);
+            // 
+            // btConnect
+            // 
+            this.btConnect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btConnect.Location = new System.Drawing.Point(47, 8);
+            this.btConnect.Name = "btConnect";
+            this.btConnect.Size = new System.Drawing.Size(83, 26);
+            this.btConnect.TabIndex = 0;
+            this.btConnect.Text = "Connect";
+            this.btConnect.Click += new System.EventHandler(this.btConnect_Click);
+            // 
+            // btTS
+            // 
+            this.btTS.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btTS.Location = new System.Drawing.Point(379, 8);
+            this.btTS.Name = "btTS";
+            this.btTS.Size = new System.Drawing.Size(67, 26);
+            this.btTS.TabIndex = 31;
+            this.btTS.Text = "File...";
+            this.btTS.Click += new System.EventHandler(this.btTS_Click);
             // 
             // btSend
             // 
-            this.btSend.Location = new System.Drawing.Point(125, 178);
+            this.btSend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btSend.Location = new System.Drawing.Point(147, 8);
             this.btSend.Name = "btSend";
-            this.btSend.Size = new System.Drawing.Size(96, 26);
+            this.btSend.Size = new System.Drawing.Size(98, 26);
             this.btSend.TabIndex = 13;
             this.btSend.Text = "Send";
             this.btSend.Click += new System.EventHandler(this.btSend_Click);
             // 
-            // label2
+            // btexit
             // 
-            this.label2.Location = new System.Drawing.Point(254, 10);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 20);
-            this.label2.Text = "Node:";
+            this.btexit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btexit.Location = new System.Drawing.Point(509, 8);
+            this.btexit.Name = "btexit";
+            this.btexit.Size = new System.Drawing.Size(58, 26);
+            this.btexit.TabIndex = 22;
+            this.btexit.Text = "Exit";
+            this.btexit.Click += new System.EventHandler(this.btexit_Click);
             // 
-            // label1
+            // btSendToWeb
             // 
-            this.label1.Location = new System.Drawing.Point(4, 11);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 20);
-            this.label1.Text = "Command:";
-            // 
-            // btConnect
-            // 
-            this.btConnect.Location = new System.Drawing.Point(28, 178);
-            this.btConnect.Name = "btConnect";
-            this.btConnect.Size = new System.Drawing.Size(91, 26);
-            this.btConnect.TabIndex = 0;
-            this.btConnect.Text = "Connect";
-            this.btConnect.Click += new System.EventHandler(this.btConnect_Click);
+            this.btSendToWeb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btSendToWeb.Location = new System.Drawing.Point(270, 9);
+            this.btSendToWeb.Name = "btSendToWeb";
+            this.btSendToWeb.Size = new System.Drawing.Size(69, 26);
+            this.btSendToWeb.TabIndex = 28;
+            this.btSendToWeb.Text = "Speed";
             // 
             // tabServer
             // 
@@ -813,10 +862,11 @@
             this.tabServer.Controls.Add(this.tabSetting);
             this.tabServer.Controls.Add(this.tabMap);
             this.tabServer.Controls.Add(this.tabPage1);
+            this.tabServer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabServer.Location = new System.Drawing.Point(0, 0);
             this.tabServer.Name = "tabServer";
             this.tabServer.SelectedIndex = 0;
-            this.tabServer.Size = new System.Drawing.Size(473, 243);
+            this.tabServer.Size = new System.Drawing.Size(578, 237);
             this.tabServer.TabIndex = 0;
             this.tabServer.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -829,7 +879,7 @@
             this.tabPage1.Controls.Add(this.lbPortServer);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(465, 214);
+            this.tabPage1.Size = new System.Drawing.Size(570, 208);
             this.tabPage1.Text = "Server";
             // 
             // lb_status
@@ -949,9 +999,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(473, 243);
+            this.ClientSize = new System.Drawing.Size(578, 237);
             this.Controls.Add(this.tabServer);
-            this.MaximizeBox = false;
             this.Name = "Emboard";
             this.Text = "Emboard";
             this.Load += new System.EventHandler(this.Emboard_Load);
@@ -966,6 +1015,10 @@
             this.pnNode.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.tabConnect.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.tabServer.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -1001,11 +1054,8 @@
         private System.Windows.Forms.TabPage tabConnect;
         private System.Windows.Forms.ComboBox cbnode;
         private System.Windows.Forms.ComboBox cbMalenh;
-        private System.Windows.Forms.Button btexit;
-        private System.Windows.Forms.Button btSend;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btConnect;
         private System.Windows.Forms.TabControl tabServer;
         private System.Windows.Forms.ComboBox cbPeriod;
         private System.Windows.Forms.Label lbperiod;
@@ -1058,9 +1108,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cbSelectVan;
-        private System.Windows.Forms.Button btSendToWeb;
-        private System.Windows.Forms.Button btTS;
-        public System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Label lb_status;
         private System.Windows.Forms.TextBox lb_text;
@@ -1068,6 +1115,16 @@
         private System.Windows.Forms.TextBox text_port;
         private System.Windows.Forms.Label lbPortServer;
         private System.Windows.Forms.Button btnC;
+        private System.Windows.Forms.Button btTS;
+        private System.Windows.Forms.Button btSendToWeb;
+        private System.Windows.Forms.Button btexit;
+        private System.Windows.Forms.Button btSend;
+        private System.Windows.Forms.Button btConnect;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel7;
+        public System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 

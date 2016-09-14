@@ -28,7 +28,7 @@ namespace Emboard
             try
             {
                 Bitmap bmp = new Bitmap(sensor.Img_path);
-                pictureBox2.Image = (Image)bmp;               
+                pictureBox2.Image = (Image)bmp;
             }
             catch { }
         }

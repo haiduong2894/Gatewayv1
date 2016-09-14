@@ -19,6 +19,7 @@
     <FormFactorID>
     </FormFactorID>
     <DeployDirPrefix>%25CSIDL_PERSONAL%25</DeployDirPrefix>
+    <ApplicationIcon>sidebar.exe_I0064_0409.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -112,6 +113,9 @@
     </Compile>
     <Compile Include="Van.cs" />
     <Compile Include="WebServer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="sidebar.exe_I0064_0409.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
   <ProjectExtensions>
