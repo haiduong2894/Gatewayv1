@@ -1,0 +1,7 @@
+\Storage Card\Sigate\Xml\database.xml;
+\Storage Card\Sigate\Xml\baochay_db.xml;
+http://lab411s.esy.es/sg/rx.php;
+http://lab411s.esy.es/sg/mymap.php;
+http://lab411s.esy.es/sg/getdata.php;
+http://lab411s.esy.es/sg/getweather.php;
+20

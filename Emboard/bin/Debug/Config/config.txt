@@ -1,0 +1,7 @@
+C:\Users\Dýõng\Desktop\Gatewayv1\Gatewayv1\Emboard\bin\Debug\Xml\database.xml;
+C:\Users\Dýõng\Desktop\Gatewayv1\Gatewayv1\Emboard\bin\Debug\Xml\baochay_db.xml;
+http://192.168.0.111/sg/rx.php;
+http://192.168.0.111/sg/mymap.php;
+http://192.168.0.111/sg/getdata.php;
+http://192.168.0.111/sg/getweather.php;
+20
