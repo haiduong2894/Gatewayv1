@@ -108,11 +108,7 @@
             this.btSendToWeb = new System.Windows.Forms.Button();
             this.tabServer = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.lb_status = new System.Windows.Forms.Label();
-            this.lb_text = new System.Windows.Forms.TextBox();
-            this.btn_start = new System.Windows.Forms.Button();
-            this.text_port = new System.Windows.Forms.TextBox();
-            this.lbPortServer = new System.Windows.Forms.Label();
+            this.btnConnectSql = new System.Windows.Forms.Button();
             this.ctMenuVan = new System.Windows.Forms.ContextMenu();
             this.batvan = new System.Windows.Forms.MenuItem();
             this.tatvan = new System.Windows.Forms.MenuItem();
@@ -128,6 +124,7 @@
             this.menuHumi = new System.Windows.Forms.MenuItem();
             this.ctxMenuReset = new System.Windows.Forms.ContextMenu();
             this.mnReset = new System.Windows.Forms.MenuItem();
+            this.btnInter = new System.Windows.Forms.Button();
             this.tabMap.SuspendLayout();
             this.pnShow.SuspendLayout();
             this.tabSetting.SuspendLayout();
@@ -884,54 +881,21 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.lb_status);
-            this.tabPage1.Controls.Add(this.lb_text);
-            this.tabPage1.Controls.Add(this.btn_start);
-            this.tabPage1.Controls.Add(this.text_port);
-            this.tabPage1.Controls.Add(this.lbPortServer);
+            this.tabPage1.Controls.Add(this.btnInter);
+            this.tabPage1.Controls.Add(this.btnConnectSql);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Size = new System.Drawing.Size(464, 198);
             this.tabPage1.Text = "Server";
             // 
-            // lb_status
+            // btnConnectSql
             // 
-            this.lb_status.Location = new System.Drawing.Point(119, 62);
-            this.lb_status.Name = "lb_status";
-            this.lb_status.Size = new System.Drawing.Size(232, 20);
-            this.lb_status.Text = "Status";
-            // 
-            // lb_text
-            // 
-            this.lb_text.Location = new System.Drawing.Point(68, 85);
-            this.lb_text.Multiline = true;
-            this.lb_text.Name = "lb_text";
-            this.lb_text.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.lb_text.Size = new System.Drawing.Size(328, 104);
-            this.lb_text.TabIndex = 7;
-            // 
-            // btn_start
-            // 
-            this.btn_start.Location = new System.Drawing.Point(271, 26);
-            this.btn_start.Name = "btn_start";
-            this.btn_start.Size = new System.Drawing.Size(80, 24);
-            this.btn_start.TabIndex = 5;
-            this.btn_start.Text = "Start Server";
-            this.btn_start.Click += new System.EventHandler(this.btn_start_Click);
-            // 
-            // text_port
-            // 
-            this.text_port.Location = new System.Drawing.Point(151, 26);
-            this.text_port.Name = "text_port";
-            this.text_port.Size = new System.Drawing.Size(100, 23);
-            this.text_port.TabIndex = 4;
-            // 
-            // lbPortServer
-            // 
-            this.lbPortServer.Location = new System.Drawing.Point(87, 29);
-            this.lbPortServer.Name = "lbPortServer";
-            this.lbPortServer.Size = new System.Drawing.Size(39, 20);
-            this.lbPortServer.Text = "Port: ";
+            this.btnConnectSql.Location = new System.Drawing.Point(3, 169);
+            this.btnConnectSql.Name = "btnConnectSql";
+            this.btnConnectSql.Size = new System.Drawing.Size(87, 26);
+            this.btnConnectSql.TabIndex = 0;
+            this.btnConnectSql.Text = "Connect SQL";
+            this.btnConnectSql.Click += new System.EventHandler(this.btnConnectSql_Click);
             // 
             // ctMenuVan
             // 
@@ -1005,6 +969,15 @@
             // 
             this.mnReset.Text = "Reset";
             this.mnReset.Click += new System.EventHandler(this.mnReset_Click);
+            // 
+            // btnInter
+            // 
+            this.btnInter.Location = new System.Drawing.Point(3, 131);
+            this.btnInter.Name = "btnInter";
+            this.btnInter.Size = new System.Drawing.Size(87, 23);
+            this.btnInter.TabIndex = 1;
+            this.btnInter.Text = "Interpolate";
+            this.btnInter.Click += new System.EventHandler(this.btnInter_Click);
             // 
             // Emboard
             // 
@@ -1121,11 +1094,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cbSelectVan;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Label lb_status;
-        private System.Windows.Forms.TextBox lb_text;
-        private System.Windows.Forms.Button btn_start;
-        private System.Windows.Forms.TextBox text_port;
-        private System.Windows.Forms.Label lbPortServer;
         private System.Windows.Forms.Button btnC;
         private System.Windows.Forms.Button btTS;
         private System.Windows.Forms.Button btSendToWeb;
@@ -1138,6 +1106,8 @@
         private System.Windows.Forms.Panel panel7;
         public System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.LinkLabel linkRetasking;
+        private System.Windows.Forms.Button btnConnectSql;
+        private System.Windows.Forms.Button btnInter;
     }
 }
 

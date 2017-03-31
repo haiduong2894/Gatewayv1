@@ -1,157 +1,62 @@
-﻿using System.Drawing;
+﻿using System;
 using System.Windows.Forms;
-using System.Net.Sockets;
-using System.IO;
 using System.Net;
+using System.IO;
 using System.Threading;
-using System;
 
 namespace Emboard
 {
+    public class JSON {
+        private string jsInput = null;
+        DateTime time = DateTime.Now();
+        private string[] cutData;
+        private string[,] data;
+        public string[,] Data
+        {
+            get{return data;}
+            set{data = value;}
+        }
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="jsInput"></param>
+        JSON(string jsInput)
+        {
+            this.jsInput = jsInput;
+        }
+        
+        private void getData()
+        {
+            cutData = jsInput.Split(new Char[] { ';' });
+        }
+    }
+
     public partial class Emboard : Form
     {
-        const int MAX_CONNECTION = 10;
-        public static string positionsendWeb;
-        static TcpListener listener;
-        private WebServer web_ = new WebServer();
-        private ShowData showData = new ShowData();
-
-       
-
-        void DoWork()
+        private void btnConnectSql_Click(object sender, System.EventArgs e)
         {
-            while (true)
-            {
-                Socket soc = listener.AcceptSocket();
-                ChangeTextBox("Welcome to Server\n");
-                AppendTextBox("Connection received from: " + soc.RemoteEndPoint + "\n");
-                try
-                {
-                    var stream = new NetworkStream(soc);
-                    var reader = new StreamReader(stream);
-                    var writer = new StreamWriter(stream);
-                    writer.AutoFlush = true;
+            Database positionDatabase = new Database();
+            string[] path = connection.Confix(); //path[6] de nhan du lieu vi tri cac sensor
+            string urlObject = path[6] + "?table=object";
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(urlObject);
+            request.Method = "GET";
+            // Get response for http web request
+            HttpWebResponse webResponse = (HttpWebResponse)request.GetResponse();
+            StreamReader responseStream = new StreamReader(webResponse.GetResponseStream());
+            // Read web response into string
+            string webResponseStream = responseStream.ReadToEnd();
+            MessageBox.Show(webResponseStream);
 
-                    while (true)
-                    {
-                        string str = reader.ReadLine();
-                        if (str.ToUpper() == "EXIT")
-                        {
-                            writer.WriteLine("bye");
-                            break;
-                        }
-                        //positionsendWeb = "#PS:" + str;
-                        //web_.sendDataToWeb(positionsendWeb);
-                        //string mac = str.Substring(0, 2);
-                        //string ip = str.Substring(2, 4);
-                        //string lat = str.Substring(6, 9);
-                        //string log = str.Substring(15, 10);
-                        //AppendTextBox("Mac: " + mac + "\r\nIP: " + ip + "\r\nTọa độ: " + lat + "," + log + "\n"); //001234025.123456026.123456
-                        switch (str[0])
-                        {
-                            case 'H':
-                                dataWeather(str);
-                                break;
-                            case 'P':
-                                dataPosition(str);
-                                break;
-                            default: 
-                                break;
-                        }
-                    }
-                    stream.Close();
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Error: " + ex);
-                }
-
-                AppendTextBox("Client disconnected: " + soc.RemoteEndPoint);
-                soc.Close();
-            }
-        }
-        public void AppendTextBox(string value)
-        {
-            int position = 0;
-            if (InvokeRequired)
-            {
-                this.Invoke(new Action<string>(AppendTextBox), new object[] { value });
-                return;
-            }
-            lb_text.Text += value + "\r\n";
-            position = lb_text.Text.IndexOf(value);
-            lb_text.SelectionStart = position;
-            lb_text.ScrollToCaret();
-        }
-        public void ChangeTextBox(string value)
-        {
-            if (InvokeRequired)
-            {
-                this.Invoke(new Action<string>(ChangeTextBox), new object[] { value });
-                return;
-            }
-            lb_status.Text = value + "\r\n";
+            //close webresponse
+            webResponse.Close();
+            responseStream.Close();
 
         }
 
-        private void btn_start_Click(object sender, System.EventArgs e)
+        private void btnInter_Click(object sender, System.EventArgs e)
         {
-            try
-            {
-                text_port.Text = "9999";
-                btn_start.Enabled = false;
-                //  IPAddress address = IPAddress.Parse("192.168.0.109");
-                IPHostEntry ipHostInfo = Dns.Resolve(Dns.GetHostName());
-                IPAddress address = ipHostInfo.AddressList[0];
-                Console.WriteLine("IP address:" + address);
-                int PORT_NUMBER = int.Parse(text_port.Text);
-                listener = new TcpListener(address, PORT_NUMBER);
-                lb_status.Text = "IP Server: " + address;
-                listener.Start();
-                for (int i = 0; i < MAX_CONNECTION; i++)
-                {
-                    new Thread(DoWork).Start();
-                }
-            }
-            catch { lb_status.Text = "Cannot connect to Server! "; }
-        }
-
-        public void dataWeather(String s)
-        {
-            string _dataWeather = "#" + s;
-            web_.sendDataToWeb(_dataWeather);
-            string mac = s.Substring(1, 2);
-            string ip = s.Substring(3, 4);
-            string temperature = s.Substring(7, 5);
-            string humidity = s.Substring(12, 7);
-            AppendTextBox("Mac: " + mac + "\r\nIP: " + ip + "\r\nTemperature: " + temperature +
-                "\r\nHumidity: " + humidity);
-        }
-
-        public void dataPosition(String s)
-        {
-            positionsendWeb = "#" + s;
-            web_.sendDataToWeb(positionsendWeb);
-            string mac = s.Substring(1, 2);
-            string ip = s.Substring(3, 4);
-            string lat = s.Substring(7, 9);
-            string log = s.Substring(16, 10);
-            AppendTextBox("Mac: " + mac + "\r\nIP: " + ip + "\r\nPosition: " + lat + "," + log + "\n");
-        }
-
-        public void dataReport(String s)
-        {
-            string _dataWeather = "#" + s;
-            web_.sendDataToWeb(_dataWeather);
-            string mac = s.Substring(2, 2);
-            string ip = s.Substring(4, 4);
-            string temperature = s.Substring(8, 5);
-            string humidity = s.Substring(13, 7);
-            string lat = s.Substring(20, 9);
-            string lng = s.Substring(29, 10);
-            AppendTextBox("Mac: " + mac + "\r\nIP: " + ip + "\r\nTemperature: " + temperature +
-                "\r\nHumidity: " + humidity + "\r\nPosition: " + lat + "," + lng + "\n");
-        }
+            //Back interplationWorker = new Thread();
+        }   
     }
 }
 
